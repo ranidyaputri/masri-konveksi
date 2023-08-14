@@ -20,23 +20,22 @@
         <li>
           <a href="#" class="block py-2 pl-3 pr-4 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">Katalog</a>
         </li>
-        <li>
-          <a href="#" class="flex item-center py-2 pl-3 pr-4 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300 group">
+        <li class="{{ Auth::check() ? 'hidden' : '' }}">
+          <a href="{{ route('auth.index') }}" class="flex item-center py-2 pl-3 pr-4 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300 group">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="flex-shrink-0 fill-dismiss group-hover:fill-primary transition ease-in-out duration-300 mr-2">
               <path d="M12 12q-1.65 0-2.825-1.175T8 8q0-1.65 1.175-2.825T12 4q1.65 0 2.825 1.175T16 8q0 1.65-1.175 2.825T12 12Zm6 8H6q-.825 0-1.413-.588T4 18v-.8q0-.85.438-1.563T5.6 14.55q1.55-.775 3.15-1.163T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2v.8q0 .825-.588 1.413T18 20ZM6 18h12v-.8q0-.275-.138-.5t-.362-.35q-1.35-.675-2.725-1.012T12 15q-1.4 0-2.775.338T6.5 16.35q-.225.125-.363.35T6 17.2v.8Zm6-8q.825 0 1.413-.588T14 8q0-.825-.588-1.413T12 6q-.825 0-1.413.588T10 8q0 .825.588 1.413T12 10Zm0-2Zm0 10Z"/>
             </svg>
             <span>Masuk Akun</span>
           </a>
         </li>
-        
-        
-        <div class="hidden">
+
+        <div class="{{ Auth::check() ? '' : 'hidden' }}">
           <li>
             <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center w-full text-dismiss hover:text-primary hover:font-bold active:font-bold focus:text-primary focus:font-bold md:p-0 hover:transition ease-in-out duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-dismiss hover:fill-primary transition ease-in-out duration-300 mr-2">
                 <path d="M12 12q-1.65 0-2.825-1.175T8 8q0-1.65 1.175-2.825T12 4q1.65 0 2.825 1.175T16 8q0 1.65-1.175 2.825T12 12Zm6 8H6q-.825 0-1.413-.588T4 18v-.8q0-.85.438-1.563T5.6 14.55q1.55-.775 3.15-1.163T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2v.8q0 .825-.588 1.413T18 20ZM6 18h12v-.8q0-.275-.138-.5t-.362-.35q-1.35-.675-2.725-1.012T12 15q-1.4 0-2.775.338T6.5 16.35q-.225.125-.363.35T6 17.2v.8Zm6-8q.825 0 1.413-.588T14 8q0-.825-.588-1.413T12 6q-.825 0-1.413.588T10 8q0 .825.588 1.413T12 10Zm0-2Zm0 10Z"/>
               </svg>
-              Ranidya P
+              {{ Auth::user()->name }}
             </button>
             <!-- Dropdown menu -->
             <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
@@ -62,24 +61,6 @@
           </li>
         </div>
         
-
-
-        {{-- <li>
-          <a href="#" alt="Pesanan Saya" class="block py-2 pl-3 pr-4 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="stroke-dismiss hover:stroke-primary transition ease-in-out duration-300">
-              <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M6.331 8H17.67a2 2 0 0 1 1.977 2.304l-1.255 8.152A3 3 0 0 1 15.426 21H8.574a3 3 0 0 1-2.965-2.544l-1.255-8.152A2 2 0 0 1 6.331 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></g>
-            </svg>
-            
-          </a>
-        </li>
-        <li>
-          <a href="#" alt="Login" class="block py-2 pl-3 pr-4 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="stroke-dismiss hover:stroke-primary transition ease-in-out duration-300">
-              <path fill="currentColor" d="M12 12q-1.65 0-2.825-1.175T8 8q0-1.65 1.175-2.825T12 4q1.65 0 2.825 1.175T16 8q0 1.65-1.175 2.825T12 12Zm6 8H6q-.825 0-1.413-.588T4 18v-.8q0-.85.438-1.563T5.6 14.55q1.55-.775 3.15-1.163T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2v.8q0 .825-.588 1.413T18 20ZM6 18h12v-.8q0-.275-.138-.5t-.362-.35q-1.35-.675-2.725-1.012T12 15q-1.4 0-2.775.338T6.5 16.35q-.225.125-.363.35T6 17.2v.8Zm6-8q.825 0 1.413-.588T14 8q0-.825-.588-1.413T12 6q-.825 0-1.413.588T10 8q0 .825.588 1.413T12 10Zm0-2Zm0 10Z"/>
-            </svg>
-            
-          </a>
-        </li> --}}
         
       </ul>
     </div>
