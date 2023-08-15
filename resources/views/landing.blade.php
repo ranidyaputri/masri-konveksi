@@ -2,7 +2,7 @@
 @section('content')
 @include('partials.navbar')
   {{-- hero wrapper --}}
-  <div class="hero-wrapper mx-[60px] mt-[5rem] flex flex-col md:flex-row columns-1 min-[900px]:columns-2 gap-[4rem] items-center justify-center">
+  <div class="hero-wrapper mx-[60px] mt-[120px] flex flex-col md:flex-row columns-1 min-[900px]:columns-2 gap-[4rem] items-center justify-center">
     <div class="hero-txt">
       <h1 class="text-primary text-[44px] md:max-lg:text-[42px] sm:text-[50px] font-bold mb-8">Kualitas Diutamakan dengan Tepat Waktu</h1>
       <p class="text-hitam text-[20px] mb-10">
@@ -109,9 +109,9 @@
           </svg>
         </div>
         <div class="service-txt">
-          <p class="text-primary font-bold text-[24px] md:text[28px] mb-3">Status Pesanan</p>
+          <p class="text-primary font-bold text-[24px] md:text[28px] mb-3">Lacak Pesanan</p>
           <p class="text-hitam">
-            Cek status pesanan baju Anda hingga tiba tujuan.
+            Lacak status pesanan baju Anda hingga tiba tujuan.
           </p>
         </div>
       </div>

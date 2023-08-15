@@ -15,7 +15,9 @@
       @include('partials.sidebar')
       <div class="p-4 sm:ml-64 bg-neutral h-[100vh]">
         <div class="p-4 mt-14">
-          <h1 class="text-xl font-bold">Hallo</h1>
+          <div class="card bg-white rounded-xl p-8 h-full">
+            hallo
+          </div>
         </div>
       </div>
     </body>

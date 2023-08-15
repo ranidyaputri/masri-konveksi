@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LacakPesananController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -27,12 +28,10 @@ Route::name('register.')->group(function (){
 });
 
 Route::get('/', [HomeController::class, 'index']);
+Route::resource('/lacak', LacakPesananController::class);
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('/', function () {
-//     return view('landing');
+// Route::get('/lacak', function () {
+//     return view('search-order');
 // });
 
 Route::get('/admin/order', function (){
