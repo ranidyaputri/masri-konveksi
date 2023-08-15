@@ -52,7 +52,15 @@
 
 <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
   <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-      <ul class="space-y-2 font-medium">
+      <ul class="space-y-2 text-sm font-medium">
+        <li>
+          <a href="{{ url('/') }}" class="flex items-center p-2 text-dismiss hover:text-primary hover:font-semibold active:text-primary active:font-semibold rounded-lg active:bg-primary-100 hover:bg-primary-100 group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 stroke-dismiss group-hover:stroke-primary" width="20" height="20" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 19v-8.5a1 1 0 0 0-.4-.8l-7-5.25a1 1 0 0 0-1.2 0l-7 5.25a1 1 0 0 0-.4.8V19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/>
+            </svg>
+            <span class="ml-3">Beranda</span>
+          </a>
+      </li>
         <li>
             <a href="{{ url('/admin/order') }}" class="flex items-center p-2 text-dismiss hover:text-primary hover:font-semibold active:text-primary active:font-semibold rounded-lg active:bg-primary-100 hover:bg-primary-100 group">
               <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 stroke-dismiss group-hover:stroke-primary" width="20" height="20" viewBox="0 0 48 48">

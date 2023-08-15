@@ -36,7 +36,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/landing');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([
@@ -47,6 +47,6 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect('/landing');
+        return redirect('/');
     }
 }

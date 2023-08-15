@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -25,12 +26,14 @@ Route::name('register.')->group(function (){
     Route::post('/register', [RegisterController::class, 'create'])->name('create');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/landing', function () {
-    return view('landing');
-});
+Route::get('/', [HomeController::class, 'index']);
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/', function () {
+//     return view('landing');
+// });
 
 Route::get('/admin/order', function (){
     return view('pages.admin.order');
