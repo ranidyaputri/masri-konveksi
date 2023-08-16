@@ -4,7 +4,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LacakPesananController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,10 +32,9 @@ Route::name('register.')->group(function (){
 Route::get('/', [HomeController::class, 'index']);
 Route::resource('/lacak', LacakPesananController::class);
 
+Route::resource('/order', OrderController::class);
+Route::resource('/transaksi', TransactionController::class);
+
 // Route::get('/lacak', function () {
 //     return view('search-order');
 // });
-
-Route::get('/admin/order', function (){
-    return view('pages.admin.order');
-});

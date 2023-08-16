@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
+use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Str;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -11,7 +15,11 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $datas = Transaction::all();
+        // dd($datas);
+        return view('pages.admin.order.index', [
+            'datas' => $datas,
+        ]);
     }
 
     /**
@@ -19,7 +27,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.order.create');
     }
 
     /**
@@ -27,7 +35,28 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_barang' => 'required',
+            'jumlah_barang' => 'required|numeric',
+            'total_bayar' => 'required|numeric',
+            'tipe_bayar' => 'required',
+        ]);
+
+        $order = Order::create([
+            'nama_barang' => $request['nama_barang'],
+            'jumlah_barang' => $request['jumlah_barang'],
+            'deskripsi' => $request['deskripsi'],
+        ]);
+
+        $transaksi = Transaction::create([
+            'id' => Str::random(10),
+            'id_order' => $order->id,
+            'total_bayar' => $request['total_bayar'],
+            'tipe_bayar' => $request['tipe_bayar'],
+            'status' => "Pesanan diproses",
+        ]);
+
+        return redirect('/order');
     }
 
     /**

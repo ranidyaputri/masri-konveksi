@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Ramsey\Uuid\Uuid;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -11,7 +13,10 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        $datas = Transaction::all();
+        return view('pages.admin.transaction.index', [
+            'datas' => $datas,
+        ]);
     }
 
     /**
@@ -19,7 +24,8 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        //
+        
+
     }
 
     /**
@@ -27,7 +33,21 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id_order' => 'required',
+            'total_bayar' => 'required|numeric',
+            'tipe_bayar' => 'required',
+        ]);
+
+        Transaction::create([
+            'id' => Uuid::uuid4(),
+            'id_order' => $request['id_order'],
+            'total_bayar' => $request['total_bayar'],
+            'tipe_bayar' => $request['tipe_bayar'],
+            'status' => $request['status'],
+        ]);
+
+        return redirect('/transaction');
     }
 
     /**
