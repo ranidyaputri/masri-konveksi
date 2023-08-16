@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,8 +20,20 @@ class LacakPesananController extends Controller
             $name = explode(" ", $string);
             $splitname = $name[0];
         }
+
+        if (request('search')) {
+            if(Transaction::where('name', 'like', '%' . request('search') . '%')){
+                $datas = Transaction::where('id', 'like', '%' . request('search') . '%')->get();
+            }else{
+                return [];
+            }
+        } else {
+            $datas = [];
+        }
+
         return view('search-order', [
             'name' => $splitname,
+            'datas' => $datas,
         ]);
     }
 

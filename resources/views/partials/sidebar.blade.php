@@ -62,7 +62,7 @@
           </a>
       </li>
         <li>
-            <a href="{{ url('/admin/order') }}" class="flex items-center p-2 text-dismiss hover:text-primary hover:font-semibold active:text-primary active:font-semibold rounded-lg active:bg-primary-100 hover:bg-primary-100 group">
+            <a href="{{ url('/order') }}" class="flex items-center p-2 text-dismiss hover:text-primary hover:font-semibold active:text-primary active:font-semibold rounded-lg active:bg-primary-100 hover:bg-primary-100 group">
               <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 stroke-dismiss group-hover:stroke-primary" width="20" height="20" viewBox="0 0 48 48">
                 <g fill="none" stroke-linejoin="round" stroke-width="4">
                   <rect width="30" height="36" x="9" y="8" rx="2"/>
@@ -73,8 +73,8 @@
             </a>
         </li>
         <li>
-            <a href="#" class="flex items-center p-2 text-dismiss hover:text-primary hover:font-semibold active:text-primary active:font-semibold rounded-lg hover:bg-primary-100 group">
-              <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 stroke-dismiss group-hover:stroke-primary" width="20" height="20" viewBox="0 0 48 48">
+            <a href="{{ url('/update-status') }}" class="{{ request()->routeIs('update-status.index') ? 'bg-primary-100 font-bold text-primary' : '' }} flex items-center p-2 text-dismiss hover:text-primary hover:font-semibold rounded-lg hover:bg-primary-100 group active">
+              <svg xmlns="http://www.w3.org/2000/svg" class="{{ request()->routeIs('update-status.index') ? 'stroke-primary' : '' }} flex-shrink-0 stroke-dismiss group-hover:stroke-primary" width="20" height="20" viewBox="0 0 48 48">
                 <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
                   <path d="m20 33l6 2s15-3 17-3s2 2 0 4s-9 8-15 8s-10-3-14-3H4"/>
                   <path d="M4 29c2-2 6-5 10-5s13.5 4 15 6s-3 5-3 5M16 18v-8a2 2 0 0 1 2-2h24a2 2 0 0 1 2 2v16"/>
