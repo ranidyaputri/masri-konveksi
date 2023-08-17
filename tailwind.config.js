@@ -32,6 +32,10 @@ export default {
       lineHeight: {
         '150%': '150%' 
       },
+      backgroundImage: {
+        'catalog' : "url('../../public/assets/img/catalog.jpg')",
+        'cloth' : "url('../../public/assets/img/clothes.jpg')",
+      },
     },
   },
   plugins: [

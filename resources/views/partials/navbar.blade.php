@@ -18,7 +18,7 @@
           <a href="#service" class="block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">Layanan</a>
         </li>
         <li>
-          <a href="#" class="block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">Katalog</a>
+          <a href="{{ url('/katalog') }}" class="block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">Katalog</a>
         </li>
         <li>
           <a href="{{ url('/lacak') }}" class="block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">Lacak Pesanan</a>
@@ -59,7 +59,7 @@
               @else
               <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                 <li>
-                  <a href="#" class="flex items-centerblock px-4 py-2 hover:bg-gray-100">
+                  <a href="{{ url('/order') }}" class="flex items-centerblock px-4 py-2 hover:bg-gray-100">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="stroke-dismiss mr-2">
                       <path fill="none" troke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 5a2 2 0 0 1 2-2h6v18H4a2 2 0 0 1-2-2V5Zm12-2h6a2 2 0 0 1 2 2v5h-8V3Zm0 11h8v5a2 2 0 0 1-2 2h-6v-7Z"/>
                     </svg>

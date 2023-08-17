@@ -36,6 +36,9 @@ Route::resource('/lacak', LacakPesananController::class);
 Route::resource('/order', OrderController::class);
 Route::resource('/update-status', UpdateStatusController::class);
 
-// Route::get('/lacak', function () {
-//     return view('search-order');
-// });
+Route::get('/katalog', function () {
+    return view('catalog');
+});
+Route::get('/detail-katalog', function () {
+    return view('detail-catalog');
+});
