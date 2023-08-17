@@ -16,7 +16,7 @@
         <div class="p-4 sm:ml-64 bg-neutral h-[100vh]">
         <div class="p-4 mt-14">
             <div class="title flex flex-col md:flex-row columns-1 md:columns-2 justify-between mt-6">
-                <h2 class="text-primary text-[28px] font-bold">Daftar Pesanan Pembeli</h2>
+                <h2 class="text-primary text-[28px] font-bold">Daftar Status Pesanan Pembeli</h2>
             </div>
 
             <div class="card-table bg-white w-full h-full rounded-xl p-[28px] mt-[40px] shadow-sm">

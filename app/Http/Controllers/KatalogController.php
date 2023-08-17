@@ -3,26 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Ramsey\Uuid\Uuid;
-use App\Models\Status;
-use App\Models\Transaction;
+use App\Models\Katalog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UpdateStatusController extends Controller
+class KatalogController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $datas = Transaction::all();
+        $splitname = "";
+        if(Auth::check()){
+            $string = User::where('name', Auth::user()->name)->first()->name;
+            $name = explode(" ", $string);
+            $splitname = $name[0];
+        }
 
-        $string = User::where('name', Auth::user()->name)->first()->name;
-        $name = explode(" ", $string);
-        $splitname = $name[0];
-
-        return view('pages.admin.track-status.index', [
+        $datas = Katalog::all();
+        return view('catalog', [
             'datas' => $datas,
             'name' => $splitname,
         ]);
@@ -33,8 +33,7 @@ class UpdateStatusController extends Controller
      */
     public function create()
     {
-        
-
+        //
     }
 
     /**
@@ -58,18 +57,7 @@ class UpdateStatusController extends Controller
      */
     public function edit(string $id)
     {
-        $datas = Transaction::find($id);
-        $status = Status::all();
-
-        $string = User::where('name', Auth::user()->name)->first()->name;
-        $name = explode(" ", $string);
-        $splitname = $name[0];
-
-        return view('pages.admin.track-status.edit', [
-            'datas' => $datas,
-            'status' => $status,
-            'name' => $splitname,
-        ]);
+        //
     }
 
     /**
@@ -77,11 +65,7 @@ class UpdateStatusController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $datas = Transaction::find($id);
-        $datas->status = $request['status'];
-        $datas->save();
-
-        return redirect('/update-status');
+        //
     }
 
     /**

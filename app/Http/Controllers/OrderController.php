@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Order;
 use Ramsey\Uuid\Uuid;
-use Illuminate\Support\Str;
 use App\Models\Transaction;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -16,9 +18,15 @@ class OrderController extends Controller
     public function index()
     {
         $datas = Transaction::all();
-        // dd($datas);
+
+        $splitname = "";
+        $string = User::where('name', Auth::user()->name)->first()->name;
+        $name = explode(" ", $string);
+        $splitname = $name[0];
+        
         return view('pages.admin.order.index', [
             'datas' => $datas,
+            'name' => $splitname,
         ]);
     }
 
@@ -27,7 +35,14 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.order.create');
+        $splitname = "";
+        $string = User::where('name', Auth::user()->name)->first()->name;
+        $name = explode(" ", $string);
+        $splitname = $name[0];
+
+        return view('pages.admin.order.create', [
+            'name' => $splitname,
+        ]);
     }
 
     /**

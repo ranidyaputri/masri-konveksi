@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RegisterController;
@@ -30,15 +31,13 @@ Route::name('register.')->group(function (){
     Route::post('/register', [RegisterController::class, 'create'])->name('create');
 });
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('/lacak', LacakPesananController::class);
 
 Route::resource('/order', OrderController::class);
 Route::resource('/update-status', UpdateStatusController::class);
+Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog.index');
 
-Route::get('/katalog', function () {
-    return view('catalog');
-});
 Route::get('/detail-katalog', function () {
     return view('detail-catalog');
-});
+})->name('detailkatalog');

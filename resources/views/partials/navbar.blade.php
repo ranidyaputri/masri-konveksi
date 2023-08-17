@@ -12,16 +12,16 @@
     <div class="hidden w-full md:block md:w-auto text-sm" id="navbar-default">
       <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border bg-putih md:bg-transparent border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
         <li>
-          <a href="{{ url('/') }}" class="block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">Beranda</a>
+          <a href="{{ url('/') }}" class="{{ request()->routeIs('home') ? 'font-bold text-primary' : '' }} block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold md:p-0 hover:transition ease-in-out duration-300">Beranda</a>
         </li>
         <li>
-          <a href="#service" class="block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">Layanan</a>
+          <a href="{{ url('/#service') }}" class="{{ request()->is('/#service') ? 'font-bold text-primary' : '' }} block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold md:p-0 hover:transition ease-in-out duration-300">Layanan</a>
         </li>
         <li>
-          <a href="{{ url('/katalog') }}" class="block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">Katalog</a>
+          <a href="{{ url('/katalog') }}" class="{{ request()->routeIs('katalog.index') ? 'font-bold text-primary' : '' }} block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold md:p-0 hover:transition ease-in-out duration-300">Katalog</a>
         </li>
         <li>
-          <a href="{{ url('/lacak') }}" class="block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">Lacak Pesanan</a>
+          <a href="{{ url('/lacak') }}" class="{{ request()->routeIs('lacak.index') ? 'font-bold text-primary' : '' }} block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">Lacak Pesanan</a>
         </li>
         <li class="{{ Auth::check() ? 'hidden' : '' }}">
           <a href="{{ route('auth.index') }}" class="flex item-center py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300 group">
