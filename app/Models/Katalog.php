@@ -11,6 +11,6 @@ class Katalog extends Model
     protected $table = 'katalog';
     
     function detailKatalog()  {
-        return $this->hasMany(DetailKatalog::class);
+        return $this->hasMany(DetailKatalog::class, 'id', 'id_katalog');
     }
 }

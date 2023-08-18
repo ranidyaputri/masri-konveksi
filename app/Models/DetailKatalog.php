@@ -11,6 +11,6 @@ class DetailKatalog extends Model
     protected $table = 'detailkatalog';
     
     function katalog()  {
-        return $this->belongsTo(Katalog::class);
+        return $this->belongsTo(Katalog::class, 'id_katalog', 'id');
     }
 }

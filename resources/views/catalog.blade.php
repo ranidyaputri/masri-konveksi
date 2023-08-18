@@ -18,78 +18,20 @@
 
   {{-- card wrapper --}}
   <div class="grid grid-cols-2 md:grid-cols-4 place-items-center mt-10">
+    @foreach ($datas as $data)      
     {{-- card --}}
-    <a href="#" class="card-link">
-      <div class="flex flex-col card-catalog h-[400px] w-[300px] mb-4">
-        <div class="img-card w-[300px] h-[300px]">
-          <img src="{{ asset('assets/img/card.jpg') }}" class="object-cover rounded-xl aspect-square">
+    <a href="{{ url('/katalog/'.$data->id) }}" class="card-link">
+      <div class="flex flex-col card-catalog w-[240px] h-[340px] md:w-[300px] md:h-[400px] mb-4">
+        <div class="img-card w-[240px] h-[240px] md:w-[300px] md:h-[300px]">
+          <img src="{{ asset('img-catalog/'.$data->file_name) }}" class="object-cover rounded-xl aspect-square">
         </div>
         <div class="card-txt mt-4">
-          {{-- <div class="inline-flex justify-between w-full"> --}}
-            <h3 class="text-xl text-primary font-bold">Kebaya</h3>
-            {{-- <span class="price-tag w-fit p-3 bg-white rounded-lg text-hitam text-xs">Rp200.000</span> --}}
-          {{-- </div> --}}
-          <p class="text-hitam text-sm mt-2">Custom kebaya by Masri Konveksi.</p>
+          <h3 class="text-xl text-primary font-bold">{{ $data->nama }}</h3>
+          <p class="text-hitam text-sm mt-2">{{ $data->deskripsi }}</p>
         </div>
       </div>
     </a>
-    
-
-    {{-- card --}}
-    <div class="flex flex-col card-catalog h-[400px] w-[300px] mb-4">
-      <div class="img-card w-[300px] h-[300px]">
-        <img src="{{ asset('assets/img/card.jpg') }}" class="object-cover rounded-xl aspect-square">
-      </div>
-      <div class="card-txt mt-4">
-        {{-- <div class="inline-flex justify-between w-full"> --}}
-          <h3 class="text-xl text-primary font-bold">Seragam</h3>
-          {{-- <span class="price-tag w-fit p-3 bg-white rounded-lg text-hitam text-xs">Rp200.000</span> --}}
-        {{-- </div> --}}
-        <p class="text-hitam text-sm mt-2">Custom kebaya by Masri Konveksi.</p>
-      </div>
-    </div>
-
-    {{-- card --}}
-    <div class="flex flex-col card-catalog h-[400px] w-[300px] mb-4">
-      <div class="img-card w-[300px] h-[300px]">
-        <img src="{{ asset('assets/img/card.jpg') }}" class="object-cover rounded-xl aspect-square">
-      </div>
-      <div class="card-txt mt-4">
-        {{-- <div class="inline-flex justify-between w-full"> --}}
-          <h3 class="text-xl text-primary font-bold">Baju Wanita</h3>
-          {{-- <span class="price-tag w-fit p-3 bg-white rounded-lg text-hitam text-xs">Rp200.000</span> --}}
-        {{-- </div> --}}
-        <p class="text-hitam text-sm mt-2">Custom kebaya by Masri Konveksi.</p>
-      </div>
-    </div>
-
-    {{-- card --}}
-    <div class="flex flex-col card-catalog h-[400px] w-[300px] mb-4">
-      <div class="img-card w-[300px] h-[300px]">
-        <img src="{{ asset('assets/img/card.jpg') }}" class="object-cover rounded-xl aspect-square">
-      </div>
-      <div class="card-txt mt-4">
-        {{-- <div class="inline-flex justify-between w-full"> --}}
-          <h3 class="text-xl text-primary font-bold">Baju PDH</h3>
-          {{-- <span class="price-tag w-fit p-3 bg-white rounded-lg text-hitam text-xs">Rp200.000</span> --}}
-        {{-- </div> --}}
-        <p class="text-hitam text-sm mt-2">Custom kebaya by Masri Konveksi.</p>
-      </div>
-    </div>
-
-    {{-- card --}}
-    <div class="flex flex-col card-catalog h-[400px] w-[300px] mb-4">
-      <div class="img-card w-[300px] h-[300px]">
-        <img src="{{ asset('assets/img/card.jpg') }}" class="object-cover rounded-xl aspect-square">
-      </div>
-      <div class="card-txt mt-4">
-        {{-- <div class="inline-flex justify-between w-full"> --}}
-          <h3 class="text-xl text-primary font-bold">Jubah</h3>
-          {{-- <span class="price-tag w-fit p-3 bg-white rounded-lg text-hitam text-xs">Rp200.000</span> --}}
-        {{-- </div> --}}
-        <p class="text-hitam text-sm mt-2">Custom kebaya by Masri Konveksi.</p>
-      </div>
-    </div>
+    @endforeach
   </div>
 </div>
 @endsection

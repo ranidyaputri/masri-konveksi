@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetailKatalog;
 use App\Models\User;
 use App\Models\Katalog;
 use Illuminate\Http\Request;
@@ -23,6 +24,21 @@ class KatalogController extends Controller
 
         $datas = Katalog::all();
         return view('catalog', [
+            'datas' => $datas,
+            'name' => $splitname,
+        ]);
+    }
+
+    function detailKatalog($id) {
+        $splitname = "";
+        if(Auth::check()){
+            $string = User::where('name', Auth::user()->name)->first()->name;
+            $name = explode(" ", $string);
+            $splitname = $name[0];
+        }
+
+        $datas = DetailKatalog::where('id_katalog', $id)->get();
+        return view('detail-catalog', [
             'datas' => $datas,
             'name' => $splitname,
         ]);
