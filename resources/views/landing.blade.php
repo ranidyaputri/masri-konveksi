@@ -8,7 +8,7 @@
       <p class="text-hitam text-[20px] mb-10">
         Solusi Anda dalam pembuatan  baju seragam, baju wanita,<br>kaos event, kebaya, dan sebagainya.
       </p>
-      <a href="#" class="text-white bg-primary hover:bg-primary-700 font-medium rounded-2xl text-md px-[22px] py-[16px] focus:outline-none">Pesan Sekarang</a>
+      <a href="https://wa.me/6285236468831?text=Halo%20Masri%20Konveksi,%20saya%20ingin%20pesan." class="text-white bg-primary hover:bg-primary-700 font-medium rounded-2xl text-md px-[22px] py-[16px] focus:outline-none">Pesan Sekarang</a>
     </div>
     <img src="{{ asset('assets/img/hero-img.png') }}" class="xl:max-w-[512px] max-w-[380px]">
   </div>

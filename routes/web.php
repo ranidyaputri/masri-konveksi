@@ -37,7 +37,7 @@ Route::resource('/lacak', LacakPesananController::class);
 Route::resource('/order', OrderController::class);
 Route::resource('/update-status', UpdateStatusController::class);
 Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog.index');
-Route::get('/katalog/{id}', [KatalogController::class, 'detailKatalog'])->name('detailkatalog');
+Route::get('/katalog/{id}', [KatalogController::class, 'detailKatalog'])->name('katalog.detailKatalog');
 
 // Route::get('/detail-katalog', function () {
 //     return view('detail-catalog');

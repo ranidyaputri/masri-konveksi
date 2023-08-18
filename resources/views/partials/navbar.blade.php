@@ -18,7 +18,7 @@
           <a href="{{ url('/#service') }}" class="{{ request()->is('/#service') ? 'font-bold text-primary' : '' }} block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold md:p-0 hover:transition ease-in-out duration-300">Layanan</a>
         </li>
         <li>
-          <a href="{{ url('/katalog') }}" class="{{ request()->routeIs('katalog.index') || request()->routeIs('detailKatalog') ? 'font-bold text-primary' : '' }} block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold md:p-0 hover:transition ease-in-out duration-300">Katalog</a>
+          <a href="{{ url('/katalog') }}" class="{{ request()->routeIs('katalog.index') || request()->routeIs('katalog.detailKatalog') ? 'font-bold text-primary' : '' }} block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold md:p-0 hover:transition ease-in-out duration-300">Katalog</a>
         </li>
         <li>
           <a href="{{ url('/lacak') }}" class="{{ request()->routeIs('lacak.index') ? 'font-bold text-primary' : '' }} block py-2 pl-3 pr-2 text-dismiss hover:text-primary hover:font-bold active:font-bold active:text-primary md:p-0 hover:transition ease-in-out duration-300">Lacak Pesanan</a>
